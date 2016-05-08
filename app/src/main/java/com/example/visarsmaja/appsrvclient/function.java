@@ -3,6 +3,7 @@ package com.example.visarsmaja.appsrvclient;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 public class function extends ActionBarActivity {
 
     private static Button buttoncam;
+    private static Button browser1;
 
 
     @Override
@@ -24,6 +26,7 @@ public class function extends ActionBarActivity {
 
 
         OnClickButtonListener();
+        BrowserListener();
 
         Switch toggle = (Switch) findViewById(R.id.wifi_switch);
         toggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -72,6 +75,26 @@ public class function extends ActionBarActivity {
 
 
                     }
+                }
+        );
+
+
+    }
+
+    public void BrowserListener(){
+
+        browser1 = (Button) findViewById(R.id.browser1);
+        browser1.setOnClickListener(
+
+                new View.OnClickListener(){
+
+                   public void onClick(View view){
+
+
+                           Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://92.60.31.99:8081/"));
+                           startActivity(browserIntent);
+
+                   }
                 }
         );
 

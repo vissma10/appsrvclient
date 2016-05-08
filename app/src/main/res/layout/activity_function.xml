@@ -57,5 +57,25 @@
         android:layout_alignLeft="@+id/textView"
         android:layout_alignStart="@+id/textView" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Browser"
+        android:id="@+id/textView4"
+        android:layout_alignTop="@+id/browser1"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignStart="@+id/textView3" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show"
+        android:id="@+id/browser1"
+        android:layout_marginTop="89dp"
+        android:layout_below="@+id/textView3"
+        android:layout_alignLeft="@+id/wifi_switch"
+        android:layout_alignStart="@+id/wifi_switch" />
+
 
 </RelativeLayout>
