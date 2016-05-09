@@ -26,6 +26,7 @@ public class kamera extends ActionBarActivity {
         videorp = (VideoView) findViewById(R.id.videorp);
 
 
+        //start camera service when button clicked
         buttonrec.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -38,7 +39,7 @@ public class kamera extends ActionBarActivity {
             }
         });
 
-
+        //recording video
         buttonpl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,6 +50,8 @@ public class kamera extends ActionBarActivity {
 
 
     }
+
+    //play the recorded video
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
 

@@ -40,10 +40,11 @@ public class client extends ActionBarActivity {
         clientAST.execute(new String[]{"10.0.2.15", "8080", "Hello from client"});
 
 
+
         OnClickButtonListener();
     }
 
-
+    // This method calls the class Function
     public void OnClickButtonListener() {
 
         button1 = (Button) findViewById(R.id.button1);

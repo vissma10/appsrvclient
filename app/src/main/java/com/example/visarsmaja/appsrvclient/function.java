@@ -28,6 +28,7 @@ public class function extends ActionBarActivity {
         OnClickButtonListener();
         BrowserListener();
 
+       //Funktion to enable and disable wifi
         Switch toggle = (Switch) findViewById(R.id.wifi_switch);
         toggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -49,7 +50,7 @@ public class function extends ActionBarActivity {
 
 
 
-
+    //method that calls the wifi service function to enable and disable it
     public void toggleWiFi(boolean status) {
         WifiManager wifiManager = (WifiManager) this
                 .getSystemService(Context.WIFI_SERVICE);
@@ -60,7 +61,7 @@ public class function extends ActionBarActivity {
         }
     }
 
-
+    //method to call the Kamera function
     public void OnClickButtonListener() {
 
         buttoncam = (Button) findViewById(R.id.buttoncam);
@@ -81,6 +82,7 @@ public class function extends ActionBarActivity {
 
     }
 
+    //method that calls the Browser app and goes to the specified address
     public void BrowserListener(){
 
         browser1 = (Button) findViewById(R.id.browser1);
