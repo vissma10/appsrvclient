@@ -84,6 +84,7 @@ public class function extends ActionBarActivity {
     }*/
 
     //method that calls the Browser app and goes to the specified address
+    
     public void BrowserListener(){
 
         browser1 = (Button) findViewById(R.id.browser1);
@@ -106,6 +107,7 @@ public class function extends ActionBarActivity {
                        }
                        //Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://185.30.146.120:48081/"));
                        //startActivity(browserIntent);
+
 
                    }
                 }
