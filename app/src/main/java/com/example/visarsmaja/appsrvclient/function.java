@@ -1,6 +1,7 @@
 package com.example.visarsmaja.appsrvclient;
 
 import android.app.AlertDialog;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -25,7 +26,7 @@ public class function extends ActionBarActivity {
         setContentView(R.layout.activity_function);
 
 
-        OnClickButtonListener();
+        //OnClickButtonListener();
         BrowserListener();
 
        //Funktion to enable and disable wifi
@@ -62,7 +63,7 @@ public class function extends ActionBarActivity {
     }
 
     //method to call the Kamera function
-    public void OnClickButtonListener() {
+    /*public void OnClickButtonListener() {
 
         buttoncam = (Button) findViewById(R.id.buttoncam);
         buttoncam.setOnClickListener(
@@ -80,7 +81,7 @@ public class function extends ActionBarActivity {
         );
 
 
-    }
+    }*/
 
     //method that calls the Browser app and goes to the specified address
     public void BrowserListener(){
@@ -92,9 +93,19 @@ public class function extends ActionBarActivity {
 
                    public void onClick(View view){
 
-
-                           Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://92.60.31.99:8081/"));
-                           startActivity(browserIntent);
+                       String url = "http://185.30.146.120:48081/";
+                       Intent intent=new Intent(Intent.ACTION_VIEW,Uri.parse(url));
+                       intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                       intent.setPackage("com.android.chrome");
+                       try {
+                           startActivity(intent);
+                       } catch (ActivityNotFoundException ex) {
+                           // Chrome browser presumably not installed so allow user to choose instead
+                           intent.setPackage(null);
+                           startActivity(intent);
+                       }
+                       //Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://185.30.146.120:48081/"));
+                       //startActivity(browserIntent);
 
                    }
                 }
